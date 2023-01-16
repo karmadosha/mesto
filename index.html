@@ -13,23 +13,20 @@
     <div class="header__line"></div>
   </header>
   <section class="profile">
-    <img class="profile__avatar" src="./images/avatar.jpg" alt="аватар пользователя">
-    <div class="profile__info">
-      <h1 class="profile__name">Жак-Ив Кусто</h1>
+    <div class="profile__personal">
+      <img class="profile__avatar" src="./images/avatar.jpg" alt="аватар пользователя">
+      <div class="profile__info">
+        <div class="profile__info-group">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <input class="profile__edit-btn" type="button">
+        </div>
       <p class="profile__about">Исследователь океана</p>
-      <input class="profile__edit-btn" type="button">
+      </div>
+    </div>
+    <div class="profile__btn">
       <input class="profile__add-btn" type="button">
     </div>
-    
-    <div class="popup">
-      <form class="popup__container" action="#" method="post">
-        Редактировать профиль
-        <input class="popup__name" type="text" name="user-name" value="">
-        <input class="popup__about" type="text" name="user-about" value="">
-        <input class="popup__btn" type="submit" name="popup-btn" value="Сохранить">
-      </form>
-    </div>
-  </section>
+  </section>  
   <section class="elements">
     <ul class="elements__list">
       <li class="elements__item">
@@ -79,5 +76,17 @@
   <footer class="footer">
     <p class="footer__copyright">© 2023 Mesto Russia</p>
   </footer>
+  <section class="popup" id="openEditForm">
+    <div class="popup__container">
+      <form  class="edit-form" name="edit-pop">
+        <button type="button" class="popup__close"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <input class="popup__name" type="text" name="user-name" value="">
+        <input class="popup__about" type="text" name="user-about" value="">
+        <input class="popup__btn" type="submit" name="popup-btn" value="Сохранить">
+      </form>
+    </div>
+  </section>
+  <script src="./vendor/script.js"></script> 
 </body>
 </html>

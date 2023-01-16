@@ -8,7 +8,14 @@
   background-image: url(../../../images/plus.svg);
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 .profile__add-btn:hover {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 445px) {
+  .profile__add-btn {
+    width: 282px;
+  }
 }
