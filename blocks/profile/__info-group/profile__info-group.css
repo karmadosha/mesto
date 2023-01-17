@@ -2,3 +2,9 @@
   display: flex;
   justify-content: flex-start;
 }
+
+@media screen and (max-width: 320px) {
+  .profile__info-group {
+    padding: 10px 0 0 25px;
+  }
+}
