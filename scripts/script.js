@@ -7,23 +7,19 @@ let nameInput = document.querySelector('.form__item_user_name');
 let aboutInput = document.querySelector('.form__item_user_about');
 let formEdit = document.querySelector('.form');
 
-function openForm() {
+function toggleForm() {
   popup.classList.toggle('popup_opened');
   nameInput.value = profileName.textContent;
   aboutInput.value = profileAbout.textContent;
-}
-
-function closeForm() {
-  popup.classList.toggle('popup_opened');
 }
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileAbout.textContent = aboutInput.value;
-  closeForm();
+  toggleForm();
 }
 
-editBtn.addEventListener('click', openForm);
-closeBtn.addEventListener('click', closeForm);
+editBtn.addEventListener('click', toggleForm);
+closeBtn.addEventListener('click', toggleForm);
 formEdit.addEventListener('submit', formSubmitHandler);
