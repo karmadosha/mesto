@@ -26,7 +26,7 @@ const elementsTemplate = document.querySelector('#element-template').content.que
 const initialCards = [
   {
     name: 'Архыз',
-    link: '../images/arkhyz-min.jpg'
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
   },
   {
     name: 'Челябинская область',
