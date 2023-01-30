@@ -68,6 +68,10 @@ function openPopupProfile() {
   aboutInput.value = profileAbout.textContent;
 }
 
+function closePopup() {
+  popup.classList.toggle('popup_opened');
+}
+
 function formSubmitHandler(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
