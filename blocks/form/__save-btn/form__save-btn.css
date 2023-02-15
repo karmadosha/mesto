@@ -1,14 +1,17 @@
 .form__save-btn {
   width: 100%;
-  min-height: 50px;
+  height: 50px;
   background-color: #000000;
   color: #ffffff;
   border-radius: 2px;
+  border: none;
+  outline: none;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
   text-align: center;
-  margin-top: 46px;
+  margin: 0;
+  margin-top: 48px;
   padding: 0;
   cursor: pointer;
   transition: opacity 1s;
@@ -20,9 +23,9 @@
 
 @media screen and (max-width: 320px) {
   .form__save-btn {
-    margin: 0;
-    margin-top: 37px;
+    margin-top: 36px;
     font-size: 14px;
     line-height: 18px;
+    height: 46px;
   }
 }

@@ -56,12 +56,18 @@ addNewCardBtn.addEventListener('click', () => {
   openPopup(popupAddCard);
 });
 
+popupProfile.addEventListener('mousedown', closeOverlay);
+popupAddCard.addEventListener('mousedown', closeOverlay);
+popupImage.addEventListener('mousedown', closeOverlay);
+
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeWithEsc);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeWithEsc);
 }
 
 closeButtons.forEach(button => {
@@ -72,7 +78,7 @@ closeButtons.forEach(button => {
 function openPopupProfile() {
   openPopup(popupProfile);
   nameInput.value = profileName.textContent;
-  aboutInput.value = profileAbout.textContent;
+  aboutInput.value = profileAbout.textContent;  
 }
 
 function handleProfileFormSubmit(evt) {
@@ -81,6 +87,19 @@ function handleProfileFormSubmit(evt) {
   profileAbout.textContent = aboutInput.value;
   closePopup(popupProfile);
 }
+
+function closeOverlay(evt) {
+  if (evt.target === evt.currentTarget || evt.target.classList.contains("popup__close-btn")) {
+    closePopup(evt.currentTarget);
+  }
+};
+
+function closeWithEsc(event) {
+  if (event.key === "Escape") {
+    const formOpen = document.querySelector('.popup_opened');
+    closePopup(formOpen);
+  };
+};
 
 function createCard(item) {
   const card = elementsTemplate.cloneNode(true);

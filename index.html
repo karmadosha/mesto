@@ -39,10 +39,16 @@
     <div class="popup__container">
       <button class="popup__close-btn" type="button" aria-label="закрыть окно"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form  class="form form_type_profile" name="profile-form">
-        <input class="form__item form__item_user_name" type="text" name="name" value="" placeholder="Имя" required>
-        <input class="form__item form__item_user_about" type="text" name="about" value="" placeholder="О себе" required>
-        <button class="form__save-btn" type="submit" name="popup-btn" aria-label="сохранить данные">Сохранить</button>
+      <form  class="form form_type_profile" name="profile" novalidate>
+        <div class="form__field">
+          <input class="form__item form__item_user_name" type="text" id="nameInput" name="nameInput" value="" placeholder="Имя" minlength="2" maxlength="40" required>
+          <span class="form__error" id="nameInput-error"></span>
+        </div>
+        <div class="form__field">
+          <input class="form__item form__item_user_about" type="text" id="abouInput" name="aboutInput" value="" placeholder="О себе" minlength="2" maxlength="200" required>
+          <span class="form__error" id="aboutInput-error"></span>
+        </div>
+        <button class="form__save-btn" type="submit" name="popupBtn" aria-label="сохранить данные">Сохранить</button>
       </form>
     </div>
   </section>
@@ -51,10 +57,16 @@
     <div class="popup__container">
       <button class="popup__close-btn" type="button" aria-label="закрыть окно"></button>
       <h2 class="popup__title">Новое место</h2>
-      <form  class="form form_type_card" name="profile-form">
-        <input class="form__item form__item_card_name" type="text" name="name" value="" placeholder="Название" required>
-        <input class="form__item form__item_card_about" type="text" name="about" value="" placeholder="Ссылка на картинку" required>
-        <button class="form__save-btn" type="submit" name="popup-btn" aria-label="сохранить данные">Создать</button>
+      <form  class="form form_type_card" name="newcard" novalidate>
+        <div class="form__field">
+          <input class="form__item form__item_card_name" type="text" id="placeInput" name="placeInput" value="" placeholder="Название" minlength="2" maxlength="30" required>
+          <span class="form__error form__error_field_place" id="placeInput-error"></span>
+        </div>
+        <div class="form__field">
+          <input class="form__item form__item_card_about" type="url" id="linkInput" name="linkInput" value="" placeholder="Ссылка на картинку" required>
+          <span class="form__error form__error_field_link" id="linkInput-error"></span>
+        </div>      
+        <button class="form__save-btn" type="submit" name="popupBtn" aria-label="сохранить данные">Создать</button>
       </form>
     </div>
   </section>
@@ -79,6 +91,7 @@
       </div>
     </div>
   </template>
-  <script src="./scripts/script.js"></script> 
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 </html>

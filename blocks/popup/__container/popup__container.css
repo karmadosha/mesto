@@ -1,14 +1,15 @@
 .popup__container {
   width: 430px;
-  min-height: 330px;
+  height: 330px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   background: #ffffff;
   border-radius: 10px;
-  padding: 34px 36px 37px 36px;
+  padding: 34px 36px 36px 36px;
+  margin: 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   position: relative;
 }
@@ -18,6 +19,5 @@
     width: 282px;
     min-height: 322px;
     padding: 25px 22px;
-    justify-content: space-between;
   }
 }
