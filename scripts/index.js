@@ -72,9 +72,7 @@ function submitNewCard(evt) {
 };
 
 initialCards.forEach((item) => {
-  const card = new Card(item, '.element-template');
-  const cardElement = card.generateCard();
-  elementsContainer.append(cardElement);
+  elementsContainer.append(createCard(item));
 });
 
 const newCardFormValidation = new FormValidator(config, formNewCard);
