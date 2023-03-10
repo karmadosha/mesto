@@ -74,8 +74,7 @@ export class FormValidator {
     this._disableSubmitButton();
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
-    });
-    this._disableSubmitButton(); 
+    });     
   };
   
   enableValidation() {
