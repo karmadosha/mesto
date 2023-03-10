@@ -37,9 +37,9 @@ const openPopupProfile = () => {
 
 const openPopupImage = (name, link) => {
   openPopup(popupImage);
-  popupImageTitle.textContent = name;
-  popupImagePicture.src = link;
-  popupImagePicture.alt = name;
+  popupImageTitle.textContent = link;
+  popupImagePicture.src = name;
+  popupImagePicture.alt = link;
 };
 
 const closePopup = (popup) => {
