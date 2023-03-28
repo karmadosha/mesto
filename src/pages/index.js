@@ -58,6 +58,7 @@ const popupAddNewCard = new PopupWithForm({
   popupSelector: '.popup_type_new-card',
   handleFormSubmit: (item) => {
     cardList.addItem(createCard(item));
+    console.log(item);
     popupAddNewCard.close();
   }
 })
