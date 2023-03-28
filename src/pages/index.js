@@ -15,14 +15,8 @@ import { config,
 import { FormValidator } from "../components/FormValidator.js";
 
 const profileFormValidation = new FormValidator(config, formProfileEdit);
-profileFormValidation.enableValidation();
-
 const newCardFormValidation = new FormValidator(config, formNewCard);
-newCardFormValidation.enableValidation();
-
 const popupWithImage = new PopupWithImage('.popup_type_big-picture');
-popupWithImage.setEventListeners();
-
 const userInfo = new UserInfo('.profile__name', '.profile__about');
 
 const popupProfileEdit = new PopupWithForm({
@@ -32,7 +26,6 @@ const popupProfileEdit = new PopupWithForm({
     popupProfileEdit.close();
   }
 })
-popupProfileEdit.setEventListeners();
 
 const openPopupProfileEdit = () => {
   profileFormValidation.resetValidation();
@@ -52,8 +45,6 @@ const cardList = new Section({
   },
 }, '.elements');
 
-cardList.renderItems();
-
 const popupAddNewCard = new PopupWithForm({
   popupSelector: '.popup_type_new-card',
   handleFormSubmit: (item) => {
@@ -62,11 +53,18 @@ const popupAddNewCard = new PopupWithForm({
     popupAddNewCard.close();
   }
 })
-popupAddNewCard.setEventListeners();
-
-profileEditBtn.addEventListener('click', openPopupProfileEdit);
 
 newCardAddBtn.addEventListener('click', () => {
   newCardFormValidation.resetValidation();
   popupAddNewCard.open();
 });
+profileEditBtn.addEventListener('click', openPopupProfileEdit);
+
+popupWithImage.setEventListeners();
+popupProfileEdit.setEventListeners();
+popupAddNewCard.setEventListeners();
+
+cardList.renderItems();
+
+profileFormValidation.enableValidation();
+newCardFormValidation.enableValidation();
