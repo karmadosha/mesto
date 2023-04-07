@@ -14,13 +14,15 @@
 
     <section class="profile">
       <div class="profile__personal">
-        <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="аватар пользователя">
+        <button class="profile__edit-avatar-btn">
+          <img class="profile__avatar" src="/" alt="аватар пользователя">
+        </button>
         <div class="profile__info">
           <div class="profile__info-group">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <h1 class="profile__name"></h1>
             <button class="profile__edit-btn" type="button" aria-label="редактировать профиль"></button>
           </div>
-        <p class="profile__about">Исследователь океана</p>
+        <p class="profile__about"></p>
         </div>
       </div>
       <button class="profile__add-btn" type="button" aria-label="добавить место"></button>
@@ -80,13 +82,38 @@
     </div>
   </section>
 
+  <section class="popup popup_type_avatar-edit">
+    <div class="popup__container popup__container_type_avatar">
+      <button class="popup__close-btn popup__close-btn_type_avatar-edit" type="button" aria-label="закрыть окно"></button>
+      <h2 class="popup__title">Обновить аватар</h2>
+      <form class="form form_type_avatar" name="avatar" novalidate>
+        <input class="form__item form__item_avatar-url" type="url" id="avatar" name="link" value="" placeholder="Ссылка на фотографию" required>
+        <span class="form__error form__error_field_avatar" id="avatar-error"></span>
+        <button class="form__save-btn" type="submit" name="popupBtn" aria-label="сохранить данные">Сохранить</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="popup popup_type_card-delete">
+    <div class="popup__container popup__container_type_card-delete">
+      <button class="popup__close-btn popup__close-btn_type_card-delete" type="button" aria-label="закрыть окно"></button>
+      <h2 class="popup__title">Вы уверены?</h2>
+      <form class="form form_type_card-delete" novalidate>
+        <button class="form__save-btn" type="submit" name="popupBtn" aria-label="удалить карточку">Да</button>
+      </form>      
+    </div>
+  </section>
+
   <template class="element-template">
     <div class="element">
       <img class="element__picture" src=" " alt="">
+      <button class="element__remove" type="button" aria-label="удалить карточку"></button>
       <div class="element__info">
         <h2 class="element__title"></h2>
-        <button class="element__like" type="button" aria-label="поставить лайк"></button>
-        <button class="element__remove" type="button" aria-label="удалить карточку"></button>
+        <div class="element__like-group">
+          <button class="element__like" type="button" aria-label="поставить лайк"></button>
+          <p class="element__like-count"></p>
+        </div>
       </div>
     </div>
   </template> 
