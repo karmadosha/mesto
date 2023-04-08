@@ -38,9 +38,8 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
   .then(([userData, cardsData]) => {    
     userId = userData._id;
     userInfo.setUserInfo(userData);
-    cardsData.forEach((card) => {
-      cardList.addInitialCards(createCard(card));
-    });
+    //cardsData.forEach((card) => {
+    cardList.renderItems(cardsData);    
     userInfo.setAvatar(userData);
   })
   .catch(err => console.log(err));
@@ -79,7 +78,7 @@ const createCard = (item) => {
 
 const cardList = new Section({
   renderer: (item) => {
-    cardList.addItem(createCard(item));
+    cardList.appendItem(createCard(item));
   },
 }, '.elements');
 
